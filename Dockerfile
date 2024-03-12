@@ -1,4 +1,4 @@
-FROM kalilinux/kali-linux-docker
+FROM kalilinux/kali-rolling
 
 ARG BUILD_DATE
 ARG VERSION
@@ -37,7 +37,7 @@ wget \
 python \
 python-numpy \
 unzip \
-kali-linux-top10 \
+kali-tools-top10 \
 menu && \
 cd /root && git clone https://github.com/kanaka/noVNC.git && \
 cd noVNC/utils && git clone https://github.com/kanaka/websockify websockify && \
