@@ -34,13 +34,14 @@ git \
 x11vnc \
 xvfb \
 wget \
-python \
+python3 \
 python-numpy \
 unzip \
+zip \
 kali-tools-top10 \
 menu && \
-cd /root && git clone https://github.com/kanaka/noVNC.git && \
-cd noVNC/utils && git clone https://github.com/kanaka/websockify websockify && \
+cd /root && git clone https://github.com/novnc/noVNC.git && \
+cd noVNC/utils && git clone https://github.com/novnc/websockify.git websockify && \
 cd /root
 ADD startup.sh /startup.sh
 
@@ -50,6 +51,6 @@ apt-get clean -y && \
 rm -rf /var/lib/apt/lists/*
 
 #The Kali Docker Image Is Out Of Date. : (
-#RUN apt-get update -y && apt-get dist-upgrade -y
+RUN apt-get update -y && apt-get dist-upgrade -y
 
 CMD /startup.sh
